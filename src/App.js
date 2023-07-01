@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Transition from 'react-transition-group/Transition';
 
 import "./App.css";
 import Modal from "./components/Modal/Modal";
@@ -26,9 +27,7 @@ class App extends Component {
           show={this.state.modalIsOpen}
           closed={this.closeModal}
         />
-        <Backdrop
-          show={this.state.modalIsOpen}
-        />
+        {this.state.modalIsOpen ? <Backdrop show /> : null}
         <button
           className="Button"
           onClick={this.showModal}
